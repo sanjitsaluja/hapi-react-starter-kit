@@ -1,7 +1,7 @@
 import { LOAD_LOCALE } from '../actions/localeActions';
 import { addLocaleData } from 'react-intl';
-import en from 'react-intl/lib/locale-data/en';
-import es from 'react-intl/lib/locale-data/es';
+import en from 'react-intl/locale-data/en';
+import es from 'react-intl/locale-data/es';
 
 addLocaleData(en);
 addLocaleData(es);
