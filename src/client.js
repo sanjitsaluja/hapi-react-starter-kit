@@ -2,10 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router';
-import {
-  ReduxRouter,
-  reduxReactRouter
-} from 'redux-router';
+import { ReduxRouter, reduxReactRouter } from 'redux-router';
 
 import { Provider } from 'react-redux';
 
