@@ -114,11 +114,7 @@ const startServer = ( callback ) => {
   };
 
   server.register([
-    {
-      register: Inert
-    }, {
-      register: Vision
-    },
+    Inert, Vision, jwt, issueToken,
     {
       register: hapiWebpack,
       options: {
@@ -127,11 +123,6 @@ const startServer = ( callback ) => {
         hot,
         developmentOnly
       }
-    },
-    {
-      register: jwt
-    }, {
-      register: issueToken
     }, {
       register: api,
       routes: {
@@ -143,19 +134,12 @@ const startServer = ( callback ) => {
         server: wsServer
         // server: apiServer //enable this for deployment on OpenShift
       }
-    }
-  ], (err) => {
-    if (err) {
-      throw err;
-    }
-    server.register([
-      {
-        register: swagger,
-        options: {
-          documentationPath: config.api.swagger.documentationPath
-        }
+    }, {
+      register: swagger,
+      options: {
+        documentationPath: config.api.swagger.documentationPath
       }
-    ], { select: [ 'api' ] }, ( error ) => {
+    }], { select: [ 'api' ] }, ( error ) => {
       if ( error ) {
         return console.error( error );
       }
@@ -248,7 +232,6 @@ const startServer = ( callback ) => {
         });
       });
     });
-  });
   // Start Development Server
   return server.start(() => callback( server ));
 };
