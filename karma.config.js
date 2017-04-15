@@ -51,15 +51,19 @@ module.exports = function(config) {
         })
       ],
       module: {
-        preLoaders: [ { //delays coverage til after tests are run, fixing transpiled source coverage error
-            test: /\.js$/,
-            exclude: [/node_modules/, /test/, /static/, /coverage/],
-            loader: 'isparta-instrumenter-loader' }
-        ],             
-        loaders: [
+        rules: [ 
+          // { //delays coverage til after tests are run, fixing transpiled source coverage error
+          //   enforce: 'pre',
+          //   test: /\.js$/,
+          //   exclude: [/node_modules/, /test/, /static/, /coverage/],
+          //   loader: 'istanbul-instrumenter-loader',
+          //   query: {
+          //       esModules: true
+          //   }
+          // },
           {
             exclude: /node_modules/,
-            loader: 'babel',
+            loader: 'babel-loader',
             test: /\.js?$/,
             /* query: {
               presets: [ 'es2015', 'react', 'stage-0' ],

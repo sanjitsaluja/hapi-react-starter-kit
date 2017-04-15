@@ -17,9 +17,9 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.optimize.OccurenceOrderPlugin(),
    // new webpack.IgnorePlugin(/\.json$/),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify( 'development' ),
       '__SERVER__': false,
@@ -31,11 +31,11 @@ module.exports = {
     // new ExtensionInstaller({ options: 'files' })
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           // cacheDirectory: false,
           // presets: [ 'es2015', 'react', 'stage-0' ],
