@@ -1,4 +1,5 @@
-const forge = require('node-forge')({ disableNativeCode: true });
+var forge = require('node-forge');
+forge.options.usePureJavaScript = true;
 
 export function encrypt(data, secret, callback) {
   const key = secret || forge.random.getBytesSync(32);
