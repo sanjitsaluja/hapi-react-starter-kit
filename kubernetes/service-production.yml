@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hapi-react-starter-kit
+spec:
+  ports:
+  - name: hapi-react-starter-kit
+    port: 80
+    targetPort: 8000
+    protocol: TCP
+  selector:
+    # identifies the set of pods to load balance traffic to
+    name: hapi-react-starter-kit
+    environment: production
+  type: LoadBalancer

@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hapi-react-starter-kit
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: hapi-react-starter-kit
+        environment: production
+    spec:
+      containers:
+        - image: sanjitsaluja/hapi-react-starter-kit:latest
+          name: hapi-react-starter-kit
+          ports:
+            - containerPort: 
+              - 8000
+              - 8080
+              protocol: TCP
