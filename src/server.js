@@ -7,8 +7,6 @@ import Vision from 'vision';
 import swagger from 'hapi-swagger';
 import jwt from 'hapi-auth-jwt2';
 import api from './api';
-import rooms from './rooms';
-import issueToken from './issueToken';
 import hapiWebpack from '../webpack/hapiWebpack';
 // React imports
 import React from 'react';
@@ -64,27 +62,15 @@ const startServer = ( callback ) => {
     labels: [ 'api' ],
     routes: {
       cors: {
-        origin: [ PROTOCOL + WS_HOST + ':' + WS_PORT ]
-      }
-    }
-  });
-  server.connection({
-    host: SERVER_HOST,
-    port: WS_PORT,
-    labels: [ 'ws' ],
-    routes: {
-      cors: {
-        origin: [ PROTOCOL + WS_HOST + ':' + SERVER_PORT ]
+        origin: [ PROTOCOL + SERVER_HOST + ':' + SERVER_PORT ]
       }
     }
   });
 
   // Set names for each connection
   server.connections[0].name = 'API';
-  server.connections[1].name = 'WS';
 
   const apiServer = server.select('api');
-  const wsServer = server.select('ws');
 
   const assets = {
     // webpack-dev-middleware options
@@ -114,7 +100,7 @@ const startServer = ( callback ) => {
   };
 
   server.register([
-    Inert, Vision, jwt, issueToken,
+    Inert, Vision, jwt,
     {
       register: hapiWebpack,
       options: {
@@ -127,12 +113,6 @@ const startServer = ( callback ) => {
       register: api,
       routes: {
         prefix: config.api.routes.path
-      }
-    }, {
-      register: rooms,
-      options: {
-        server: wsServer
-        // server: apiServer //enable this for deployment on OpenShift
       }
     }, {
       register: swagger,

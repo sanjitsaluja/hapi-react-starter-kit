@@ -14,7 +14,6 @@ injectTapEventPlugin();
 class Layout extends Component {
   render() {
     const {
-      cleanRoomsList,
       dispatch,
       setAllExtensionsDataCleared,
       setAllExtensionsDataLoaded,
@@ -45,7 +44,6 @@ class Layout extends Component {
         <RenderExtension name="paypalPayments" />
         { user.sessionId ?
           <Logout
-            cleanRoomsList={ cleanRoomsList }
             dispatch={ dispatch }
             setAllExtensionsDataCleared={ setAllExtensionsDataCleared }
             setAllExtensionsDataLoaded={ setAllExtensionsDataLoaded }
@@ -70,7 +68,6 @@ Layout.propTypes = {
     PropTypes.array,
     PropTypes.object
   ]).isRequired,
-  cleanRoomsList: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
   setAllExtensionsDataCleared: PropTypes.func.isRequired,
   setAllExtensionsDataLoaded: PropTypes.func.isRequired,

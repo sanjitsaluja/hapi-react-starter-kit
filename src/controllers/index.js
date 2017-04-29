@@ -1,9 +1,7 @@
 import users from './users';
-import rooms from './rooms';
 
 const routes = {
-  users,
-  rooms
+  users
 };
 
 export default routes;

@@ -6,8 +6,6 @@ import { ReduxRouter, reduxReactRouter } from 'redux-router';
 
 import { Provider } from 'react-redux';
 
-import io from 'socket.io-client';
-
 import createHistory from 'history/lib/createBrowserHistory';
 import ApiClient from './helpers/ApiClient';
 
@@ -43,14 +41,6 @@ if ( __DEVELOPMENT__ ) {
     console.error('Server-side React render was discarded. Make sure that your initial render does not contain any client-side code.');
   }
 }
-
-const initSocket = () => {
-  const socket = io( WS_HOST + ':' + WS_PORT );
-  return socket;
-};
-
-// Expose socket io
-global.socket = initSocket();
 
 const run = () => {
   ReactDOM.render(

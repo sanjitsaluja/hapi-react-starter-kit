@@ -3,7 +3,6 @@ import { routerStateReducer } from 'redux-router';
 
 import counter from './counter';
 import user from './userReducer';
-import rooms from './roomsReducer';
 import extensions from './extensionsReducers';
 
 export default activeReducers => {
@@ -33,7 +32,6 @@ export default activeReducers => {
   const rootReducer = combineReducers({
     ...extendedReducers,
     counter,
-    rooms,
     i18l,
     user,
     extensions,

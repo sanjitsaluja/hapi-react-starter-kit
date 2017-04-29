@@ -4,10 +4,8 @@ import App from './containers/AppContainer';
 // Core Pages
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
-import Hall from './pages/Hall';
 import Index from './pages/Index';
 import RegisterPage from './pages/Register';
-import Room from './pages/Room';
 import LoginPage from './pages/Login';
 
 // This will append extensions pages/routes to the default ones.
@@ -79,9 +77,7 @@ export default ( store, activeExtensions ) => {
         },
         { onEnter: redirectToLogin,
           childRoutes: [
-            { path: 'dashboard', component: Dashboard },
-            { path: 'hall', component: Hall },
-            { path: 'room/:id', component: Room }
+            { path: 'dashboard', component: Dashboard }
           ]
         }
       ]

@@ -4,7 +4,6 @@ import { pushState } from 'redux-router';
 import App from '../components/App';
 import * as ExtensionsActions from '../actions/extensionsActions';
 import * as UserActions from '../actions/userActions';
-import * as RoomsActions from '../actions/roomsActions';
 import * as LocaleActions from '../actions/localeActions';
 import radium from 'radium';
 const mapStateToProps = ( state ) => {
@@ -19,7 +18,7 @@ const mapStateToProps = ( state ) => {
 };
 
 const mapDispatchToProps = ( dispatch ) => {
-  return bindActionCreators({ ...ExtensionsActions, ...UserActions, ...RoomsActions, ...LocaleActions, pushState, dispatch }, dispatch );
+  return bindActionCreators({ ...ExtensionsActions, ...UserActions, ...LocaleActions, pushState, dispatch }, dispatch );
 };
 
 export default connect( mapStateToProps, mapDispatchToProps )( radium(App) );

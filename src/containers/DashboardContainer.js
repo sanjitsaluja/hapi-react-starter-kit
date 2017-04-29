@@ -2,7 +2,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Dashboard from '../components/Dashboard';
 import * as UserActions from '../actions/userActions';
-import * as RoomsActions from '../actions/roomsActions';
 
 const mapStateToProps = ( state ) => {
   return {
