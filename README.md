@@ -22,8 +22,6 @@ This repo was inspired by the following projects and their authors
 * [webpack-express-boilerplate](https://github.com/christianalfoni/webpack-express-boilerplate) by [Christian Alfoni](https://github.com/christianalfoni)
 * Heavily based on [Erikras](https://github.com/erikras)' [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)
 * [redux-react-router-async-example](https://github.com/emmenko/redux-react-router-async-example) by [emmenko](https://github.com/emmenko)
-* [hapi-socketio-redis-chat-example](https://github.com/dwyl/hapi-socketio-redis-chat-example) by [dwyl](https://github.com/dwyl)
-* Scaling Redis/Socketio [redispubsub](https://github.com/rajaraodv/redispubsub)
 
 ##Features
 * Hapi server framework for Node. - [hapijs](https://github.com/hapijs/hapi)
@@ -38,7 +36,6 @@ This repo was inspired by the following projects and their authors
 * Coverage with karma-coverage
 * API Interface - [Swagger](https://github.com/glennjones/hapi-swagger)
 * API Validation - [Joi](https://github.com/hapijs/joi)
-* Database for storing user data (CRUD) - [Redis](https://github.com/NodeRedis/node_redis)
 * Password encryption - [Iron](https://github.com/hueniverse/iron)
 * Promises - [bluebird](https://github.com/petkaantonov/bluebird)
 * Fetch [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch)
@@ -46,7 +43,6 @@ This repo was inspired by the following projects and their authors
 * Token Encoding with [node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
 * Token Encryption with [node-forge](https://github.com/digitalbazaar/forge)
 * i18n - [react-intl by yahoo](https://github.com/yahoo/react-intl)
-* Real-time messaging - [Socket.io](https://github.com/socketio/socket.io)
 * Inline CSS Styling - [Radium](https://github.com/FormidableLabs/radium)
 * OpenShift deployment READY.
 
@@ -75,10 +71,6 @@ This repo was inspired by the following projects and their authors
 * Login/Logout
 * Set language (english/spanish)
 * Access/Refresh token sessions (Oauth2)
-
-**User Rooms** (powered by socket.io)
-* Users can create multiple chat rooms
-* Users can see who is typing
 
 ## DEMO
 
@@ -132,8 +124,6 @@ Tests are incomplete.
 * [x] Coverage
 * [x] Linting
 * [x] Coveralls support
-* [x] add redis
-* [x] add socketio
 * [x] add authentication
 * [x] OpenShift Deployment guide
 * [ ] Heroku Deployment guide
@@ -149,7 +139,6 @@ Tests are incomplete.
 * [ ] More translations
 * [ ] Multiple Session Management
 * [x] Re-structure components and pages
-* [ ] Scaling Redis/Socketio
 * [ ] Social integration with bell for user accounts
 
 ## License 
